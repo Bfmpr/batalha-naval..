@@ -1,16 +1,16 @@
 {
-  "slug": "meu-jogo",
-  "title": "Nome do meu jogo",
-  "author": "Seu nome",
-  "authorClass": "Sua turma",
-  "discipline": "Matemática",
-  "grades": ["6º", "7º"],
-  "tags": ["palavra-chave", "outra-palavra"],
-  "description": "Uma frase curta que explica o que o jogo ensina.",
-  "instructions": "Como jogar, em uma ou duas frases.",
-  "duration": 5,
+  "slug": "batalha-sideral-planetas",
+  "title": "Batalha Sideral: Caça aos Planetas",
+  "author": "Breno Soares",
+  "authorClass": "9C",
+  "discipline": "Ciências",
+  "grades": ["6º ano", "7º ano", "8º ano", "9º ano"],
+  "tags": ["sistema solar", "planetas", "astronomia", "batalha naval", "ciências"],
+  "description": "Use o radar espacial e seus conhecimentos de Ciências para localizar 6 planetas escondidos no mapa antes que suas sondas acabem.",
+  "instructions": "Leia a pista do radar sobre o planeta procurado e clique em um quadrado do mapa (A1 a E5). Se errar, o radar avisa se o alvo está perto ou longe.",
+  "duration": "3 min",
   "version": "1.0.0",
   "entry": "index.html",
   "cover": "cover.svg",
-  "createdAt": "2026-11-02"
+  "createdAt": "2026-11-24"
 }

@@ -1,48 +1,83 @@
-<!doctype html>
-<html lang="pt-BR" data-theme="light">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="color-scheme" content="light dark" />
-    <title>Modelo de Jogo — Jogos VR</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="app">
-      <header class="top">
-        <div>
-          <span class="kicker">Modelo</span>
-          <h1 id="title">Clique no Alvo</h1>
-          <p class="subtitle">Troque este jogo pelo seu. O contrato já está pronto.</p>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Batalha Sideral: Caça aos Planetas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="tela-jogo" id="aplicativo">
+    <!-- Cabeçalho com título, pontuação e botões de controle -->
+    <header class="cabecalho">
+      <div class="titulo-area">
+        <h1>Batalha Sideral</h1>
+        <p class="subtitulo">Caça aos Planetas • Ciências</p>
+      </div>
+      <div class="acoes-topo">
+        <button id="botao-tema" class="botao-controle" type="button" aria-label="Alternar tema claro ou escuro">
+          Tema
+        </button>
+        <button id="botao-tela-cheia" class="botao-controle" type="button" aria-label="Alternar tela cheia">
+          Tela Cheia
+        </button>
+      </div>
+    </header>
+
+    <!-- Painel de status da partida -->
+    <section class="painel-status" aria-label="Status da missão">
+      <div class="caixa-status">
+        <span class="rotulo-status">Planeta</span>
+        <strong id="texto-rodada">1 / 6</strong>
+      </div>
+      <div class="caixa-status">
+        <span class="rotulo-status">Sondas</span>
+        <strong id="texto-sondas">12</strong>
+      </div>
+      <div class="caixa-status">
+        <span class="rotulo-status">Pontos</span>
+        <strong id="texto-pontos">0</strong>
+      </div>
+    </section>
+
+    <!-- Radar com a pista escolar da rodada -->
+    <section class="caixa-radar" aria-live="polite">
+      <div class="etiqueta-radar">SINAL DO RADAR ESPACIAL</div>
+      <p id="texto-pista" class="texto-pista">
+        Carregando coordenadas do Sistema Solar...
+      </p>
+      <div id="caixa-explicacao" class="caixa-explicacao oculto"></div>
+    </section>
+
+    <!-- Tabuleiro estilo Batalha Naval -->
+    <section class="area-tabuleiro">
+      <div id="grade-espacial" class="grade-espacial" role="grid" aria-label="Mapa espacial 5 por 5"></div>
+    </section>
+
+    <!-- Legenda de dicas de proximidade -->
+    <footer class="rodape-dicas">
+      <span>Dica do radar:</span>
+      <span class="badge-dica perto">Perto (1 casa)</span>
+      <span class="badge-dica longe">Longe</span>
+      <span class="badge-dica achado">Planeta achado</span>
+    </footer>
+
+    <!-- Tela de fim de jogo (Vitória ou Derrota) -->
+    <div id="painel-final" class="painel-final oculto" role="dialog" aria-modal="true">
+      <div class="cartao-final">
+        <h2 id="titulo-final">Missão Concluída!</h2>
+        <p id="mensagem-final"></p>
+        <div class="resumo-final">
+          <p>Pontuação final: <strong id="pontos-finais">0</strong></p>
+          <p>Tempo da missão: <strong id="tempo-final">0s</strong></p>
         </div>
-        <button id="restart" class="btn" type="button">Reiniciar</button>
-      </header>
-
-      <main>
-        <div class="hud">
-          <span class="pill">Alvos: <strong id="score">0</strong>/<span id="total">10</span></span>
-          <span class="pill">Tempo: <strong id="timer">0,0s</strong></span>
-        </div>
-
-        <div id="board" class="board" aria-label="Área do jogo">
-          <p id="start-hint" class="start-hint">Clique no alvo para começar</p>
-        </div>
-      </main>
-
-      <footer class="bottom">
-        <p>Este é o arquivo <code>game.js</code>. Leia os comentários e adapte.</p>
-      </footer>
-    </div>
-
-    <div id="result" class="overlay" hidden>
-      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="result-title">
-        <div class="modal-icon" aria-hidden="true">🎯</div>
-        <h2 id="result-title">Muito bem!</h2>
-        <p id="result-text">Você concluiu o jogo.</p>
-        <button id="play-again" class="btn btn-primary full" type="button">Jogar de novo</button>
+        <button id="botao-reiniciar" class="botao-principal" type="button">
+          Jogar Novamente
+        </button>
       </div>
     </div>
+  </main>
 
-    <script src="game.js"></script>
-  </body>
+  <script src="game.js"></script>
+</body>
 </html>
